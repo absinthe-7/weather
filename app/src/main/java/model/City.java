@@ -26,7 +26,7 @@ public class City {
         this.cityName = cityName;
     }
 
-    public String getCityCpde() {
+    public String getCityCode() {
         return cityCode;
     }
 
@@ -34,12 +34,12 @@ public class City {
         this.cityCode = cityCode;
     }
 
-    public int getProvunceId() {
+    public int getProvinceId() {
         return provinceId;
     }
 
-    public void setProvunceId(int provinceId) {
+    public void setProvinceId(int provinceId) {
         this.provinceId = provinceId;
     }
-}
 
+}
