@@ -93,7 +93,7 @@ public class Utility {
     public static void handleWeatherResponse(Context context, String response) {
         try {
             JSONObject jsonObject = new JSONObject(response);
-            JSONObject weatherInfo = jsonObject.getJSONObject("weatherinfo");
+            JSONObject weatherInfo = jsonObject.getJSONObject("weatherinfo");     /**如果返回的对象不是JSONObject,抛出JSONException异常*/
             String cityName = weatherInfo.getString("city");
             String weatherCode = weatherInfo.getString("cityid");
             String temp1 = weatherInfo.getString("temp1");
@@ -115,7 +115,7 @@ public class Utility {
                                        String publishTime) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
         SharedPreferences.Editor editor = PreferenceManager
-                .getDefaultSharedPreferences(context).edit();
+                .getDefaultSharedPreferences(context).edit();           /**获取应用的配置文件*//**在对获取的到的xml文件进行编辑*/
         editor.putBoolean("city_selected", true);
         editor.putString("city_name", cityName);
         editor.putString("weather_code", weatherCode);
@@ -124,7 +124,7 @@ public class Utility {
         editor.putString("weather_desp", weatherDesp);
         editor.putString("publish_time", publishTime);
         editor.putString("current_date", sdf.format(new Date()));
-        editor.commit();
+        editor.commit();                                                /**完成提交*/
     }
 
 }
